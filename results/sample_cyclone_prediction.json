@@ -1,0 +1,41 @@
+{
+  "satellite": {
+    "intensity_kt": 57.12,
+    "intensity_kmh": 105.79,
+    "category": "Severe Cyclonic Storm",
+    "risk": "MODERATE"
+  },
+  "intensity_forecast_3h": {
+    "current_wind_kt": 73.0,
+    "predicted_wind_kt": 70.58,
+    "predicted_wind_kmh": 130.72,
+    "category": "Very Severe Cyclonic Storm",
+    "risk": "HIGH"
+  },
+  "track_3h": {
+    "latitude": 10.8032,
+    "longitude": 72.3205
+  },
+  "track_forecast": {
+    "3h": {
+      "latitude": 10.8209,
+      "longitude": 71.8933
+    },
+    "6h": {
+      "latitude": 11.0021,
+      "longitude": 71.6803
+    },
+    "12h": {
+      "latitude": 11.3968,
+      "longitude": 71.2815
+    },
+    "18h": {
+      "latitude": 11.8015,
+      "longitude": 70.8859
+    },
+    "24h": {
+      "latitude": 12.1841,
+      "longitude": 70.4954
+    }
+  }
+}
