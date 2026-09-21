@@ -27,7 +27,8 @@ app = FastAPI(
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173"
+        "http://localhost:5173",
+        "https://neuro-vortex-frontend-phi.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -39,13 +40,11 @@ app.add_middleware(
 # PROJECT PATHS
 # ============================================================
 
-# Project root:
-# SIH_CyclonetAI_Project/
-#
-# backend/
-# models/
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(
+    os.path.dirname(
+        os.path.abspath(__file__)
+    )
+)
 
 MODEL_FOLDER = os.path.join(
     BASE_DIR,
@@ -58,7 +57,10 @@ UPLOAD_FOLDER = os.path.join(
     "uploads"
 )
 
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+os.makedirs(
+    UPLOAD_FOLDER,
+    exist_ok=True
+)
 
 
 # ============================================================
@@ -173,37 +175,27 @@ def sample_prediction():
         "track_forecast": {
 
             "3h": {
-
                 "latitude": 10.8209,
-
                 "longitude": 71.8933
             },
 
             "6h": {
-
                 "latitude": 11.0021,
-
                 "longitude": 71.6803
             },
 
             "12h": {
-
                 "latitude": 11.3968,
-
                 "longitude": 71.2815
             },
 
             "18h": {
-
                 "latitude": 11.8015,
-
                 "longitude": 70.8859
             },
 
             "24h": {
-
                 "latitude": 12.1841,
-
                 "longitude": 70.4954
             }
         }
@@ -245,6 +237,7 @@ async def predict_cyclone(
     data: str = Form(...),
 
     image: UploadFile = File(...)
+
 ):
 
     try:
@@ -366,7 +359,6 @@ async def predict_cyclone(
             "track_3h": track_result,
 
             "track_forecast": history_result
-
         }
 
 
@@ -515,12 +507,10 @@ def predict_insat_intensity_api(image_path):
 
 
     prediction_norm = float(
-
         insat_model.predict(
             img,
             verbose=0
         )[0][0]
-
     )
 
 
@@ -740,7 +730,6 @@ def predict_history_track_api(
         current_lat -
         lat_3h_ago
     )
-
 
     lon_change_3h = (
         current_lon -
